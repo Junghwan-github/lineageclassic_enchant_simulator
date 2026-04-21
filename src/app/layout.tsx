@@ -23,7 +23,6 @@ export const metadata: Metadata = {
     "방어구 강화",
     "Linrush",
   ],
-  themeColor: "#000000",
   openGraph: {
     title: "리니지 클래식 강화 시뮬레이터 | Linrush",
     description:
@@ -45,6 +44,10 @@ export const metadata: Metadata = {
     "naver-site-verification": "25897777ed586c73471f1c3c63291fa3a7429508",
     "google-site-verification": "i0_o_73IC5nqAspm276TLd0H7gs7qfNgH1frTjFUf78",
   },
+};
+
+export const viewport = {
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
