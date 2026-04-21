@@ -17,6 +17,13 @@ const Footer = () => {
     },
   ];
 
+  const footerNav = [
+    { item: "개발자 정보", link: "dev" },
+    { item: "홈페이지 및 앱 제작 문의", link: "make" },
+    { item: "협업 문의", link: "together" },
+    {},
+  ];
+
   return (
     <footer className={styles.footer}>
       <div className={styles.support_info}>
@@ -24,11 +31,10 @@ const Footer = () => {
           본 페이지가 도움이 되셨거나 마음에 드셨다면, 작은 후원으로
           응원해주시면 큰 힘이 됩니다. <FcLike />
         </p>
-        <p>후원 계좌 : 농협 356-1329-3322-13 | 예금주 : 박정환</p>
+        <p>후원 계좌 농협 356-1329-3322-13 | 예금주 박정환</p>
       </div>
       <div className={styles.content}>
         <div className={styles.dev_info}>
-          {/* <h4>개발자 정보</h4> */}
           <ul className={`${styles.list} ${styles.dev_info_list}`}>
             {devInfo.map((item, idx) => {
               const Icon = item.icon;
