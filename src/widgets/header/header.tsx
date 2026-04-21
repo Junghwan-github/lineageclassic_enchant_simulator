@@ -5,11 +5,17 @@ import Link from "next/link";
 
 const Header = () => {
   const navigationList = [
+    // notice
     { item: "공지", link: "coming-soon" },
+    // feedback
     { item: "개선제안", link: "coming-soon" },
+    // about
     { item: "개발자소개", link: "coming-soon" },
+    // contact
     { item: "제작문의", link: "coming-soon" },
+    // collaboration
     { item: "협업제안", link: "coming-soon" },
+    // ads
     { item: "광고/제휴", link: "coming-soon" },
   ];
 
