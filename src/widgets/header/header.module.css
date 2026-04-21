@@ -16,6 +16,27 @@
   width: 100%;
   border-top: 1px solid #111;
   height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav > ul {
+  width: 850px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.main_nav > a:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.sub_nav > a:hover {
+  border-bottom: 1px solid #555;
 }
 
 .title {
@@ -28,6 +49,10 @@
   margin: 0;
   padding: 10px 0;
   box-sizing: border-box;
+}
+.title > a {
+  display: flex;
+  align-items: center;
   gap: 5px;
 }
 
@@ -38,4 +63,16 @@
   border-radius: 5px;
   padding: 4px 10px;
   font-size: 0.9rem;
+}
+
+.main_nav > a {
+  color: #ffffff;
+  font-weight: 300;
+  padding: 3px 0;
+}
+
+.sub_nav > a {
+  color: #555;
+  font-weight: 300;
+  padding: 3px 0;
 }

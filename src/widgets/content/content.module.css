@@ -24,3 +24,11 @@
     margin: 0;
     padding: 0;
 }
+
+.p1 {
+    color: #555;
+    padding: 15px 0 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+}

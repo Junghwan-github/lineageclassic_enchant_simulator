@@ -2,6 +2,7 @@ import styles from "./footer.module.css";
 import { FaGithub } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
 import { FcLike } from "react-icons/fc";
+import Link from "next/link";
 
 const Footer = () => {
   const devInfo = [
@@ -18,10 +19,11 @@ const Footer = () => {
   ];
 
   const footerNav = [
-    { item: "개발자 정보", link: "dev" },
-    { item: "홈페이지 및 앱 제작 문의", link: "make" },
-    { item: "협업 문의", link: "together" },
-    {},
+    { item: "개발자소개", link: "coming-soon" },
+    { item: "제작문의", link: "coming-soon" },
+    { item: "협업제안", link: "coming-soon" },
+    { item: "광고/제휴문의", link: "coming-soon" },
+    { item: "개선제안", link: "coming-soon" },
   ];
 
   return (
@@ -50,12 +52,16 @@ const Footer = () => {
         </div>
         <nav className={styles.footer_links}>
           <ul className={`${styles.list} ${styles.footer_links_list}`}>
-            <li></li>
+            {footerNav.map((item, idx) => (
+            <li key={idx+1}>
+                <Link href={item.link}>{item.item}</Link>
+            </li>
+            ))}
           </ul>
         </nav>
       </div>
-
       <div className={styles.copyrights}>
+        <p>본 페이지의 데이터 및 이미지 저작권은 NCSoft에 있습니다</p>
         <p>ⓒ 2026. linrush.kr All rights reserved.</p>
       </div>
     </footer>
