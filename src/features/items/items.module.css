@@ -1,0 +1,296 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 850px;
+  width: 100%;
+  position: relative;
+}
+
+.list_container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 850px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.message {
+  font-size: 0.9rem;
+  color: #ff0000;
+  top: 55px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  height: 20px;
+  position: absolute;
+  background-color: #000;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  font-weight: 300;
+  border: 1px solid #777;
+  z-index: 300;
+}
+
+.item {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  color: #fff;
+  gap: 10px;
+}
+
+.list {
+  width: 75%;
+  position: relative;
+}
+
+.count {
+  width: 25%;
+  position: relative;
+}
+
+.submit {
+  background-color: #0044ffc4;
+  color: #fff;
+  border: 1px solid #0044ffc4;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.list_btn {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px 3px 10px 10px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.weapon_btn,
+.armor_btn,
+.count_btn {
+  width: 100%;
+}
+
+.item_list {
+  position: absolute;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-top: 5px;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 999;
+  width: 100%;
+  box-sizing: border-box;
+  max-height: 200px;
+  visibility: hidden;
+  overflow-y: auto;
+}
+.item_list::-webkit-scrollbar {
+  width: 2px;
+}
+.item_list::-webkit-scrollbar-thumb {
+  background-color: #6200ff;
+  border-radius: 3px;
+}
+.item_list li {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1px solid #333;
+  font-size: 0.88rem;
+  font-weight: 400;
+}
+
+.item_list li:hover {
+  background-color: #1d1d1d;
+}
+
+.item_list li:last-child {
+  border-bottom: none;
+}
+
+.item_list.open {
+  visibility: visible;
+}
+
+.action_btns {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.reset {
+  background-color: #ff000057;
+  color: #ffcccc8e;
+  border: 1px solid #ff000057;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.current_item_list {
+  color: #fff;
+  border-bottom: 1px solid #222;
+  height: 77px;
+}
+
+.desc {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.desc > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff3d;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.desc > button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 3px 10px;
+}
+
+.current_item_list > ul {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 10px;
+  padding: 0 0 10px 0;
+}
+
+.current_item_list > ul::-webkit-scrollbar {
+  height: 2px;
+}
+
+.current_item_list > ul::-webkit-scrollbar-thumb {
+  background-color: #6200ff;
+}
+
+/* .current_item_list > ul::-webkit-scrollbar-track {
+  background-color: #fff;
+} */
+
+
+.current_item_list > ul > li {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+}
+
+.selected_item {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+
+.current_item {
+  padding: 5px 7px;
+  border-radius: 5px;
+  background-color: #222;
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.current_item_remove_btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding: 3px 0 0;
+  margin: 0;
+}
+
+.guide {
+  color: #222;
+  /* font-family: 'Tangba', sans-serif; */
+  line-height: 1.6;
+}
+
+.title {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 14px;
+}
+
+.section h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.section p {
+  font-size: 0.8rem;
+  margin: 2px 0;
+  color: #444;
+}
+
+.guide_list {
+  padding-left: 16px;
+  font-size: 0.8rem;
+}
+
+.guide_list li {
+  margin-bottom: 4px;
+}
+
+.highlight {
+  color: #4da6ff;
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: #888;
+  text-align: center;
+}
+
+.manual_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.manual_header > button {
+  background-color: transparent;
+  border: none;
+}

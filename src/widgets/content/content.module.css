@@ -1,0 +1,26 @@
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 100px;
+}
+
+.exclamation {
+    width: 850px;
+    border: 1px solid #aaa;
+    margin-top: 30px;
+    border-radius: 10px;
+    color: #aaa;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+.exclamation > p {
+    margin: 0;
+    padding: 0;
+}

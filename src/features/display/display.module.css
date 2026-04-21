@@ -1,0 +1,293 @@
+@font-face {
+  font-family: "Tangba";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2601-4@1.1/Tangba12.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+
+.display_container {
+  position: relative;
+}
+
+.display_background {
+  max-width: 850px;
+  border: 1px solid #333;
+}
+
+.display_background > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.display_right_ui {
+  position: absolute;
+  width: 35%;
+  max-width: 280px;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+.display_right_ui.inven_open {
+  display: block;
+}
+
+.display_right_ui > img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.display_bottom_ui {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  max-width: 850px;
+}
+
+.display_bottom_ui > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.inven_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 8.7% 15% 15% 20%;
+  box-sizing: border-box;
+}
+
+.inven_list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.inven_list > li {
+  width: 25%;
+  height: 12.5%;
+  /* cursor: pointer; */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #af8f73;
+  border-right: 1px solid #af8f73;
+  border-left: 1px solid transparent;
+  border-top: 1px solid transparent;
+  position: relative;
+}
+
+.inven_item.inven_item_on::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: #2e0d06;
+  box-sizing: border-box;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.inven_item.inven_item_on {
+  background-color: #5e2e1fe7;
+}
+
+.inven_item > .inven_item_name {
+  position: absolute;
+  bottom: -21px;
+  left: 0;
+  font-family: "Tangba", sans-serif;
+  font-size: 0.9rem;
+  color: #fff;
+  visibility: hidden;
+  z-index: 333;
+  display: inline-block;
+  width: 200px;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.inven_list > li:nth-child(4n) .inven_item_name {
+  left: auto;
+  right: 7%;
+  text-align: right;
+}
+
+.inven_list > li:nth-child(4n + 3) .inven_item_name {
+  left: auto;
+  text-align: center;
+}
+
+.inven_item:hover > .inven_item_name.inven_item_name_on {
+  visibility: visible;
+}
+
+.inven_list > li > img {
+  object-fit: contain;
+  width: 93%;
+  height: auto;
+  z-index: 222;
+}
+
+.inven_item_detail {
+  position: absolute;
+  top: 101%;
+  left: 0;
+  width: 411%;
+  z-index: 444;
+  border: 3px solid #999;
+  background-color: #000000a9;
+  visibility: hidden;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.inven_list > li:nth-child(4n + 1) .inven_item_detail {
+  left: 0;
+}
+
+.inven_list > li:nth-child(4n + 2) .inven_item_detail {
+  left: -105%;
+}
+
+.inven_list > li:nth-child(4n + 3) .inven_item_detail {
+  left: -209%;
+}
+
+.inven_list > li:nth-child(4n) .inven_item_detail {
+  left: -313%;
+}
+
+.inven_item:hover > .inven_item_detail_on {
+  visibility: visible;
+}
+
+.inven_item_detail > ul {
+  padding: 5px;
+}
+
+.inven_item_detail > ul > li {
+  color: #fff;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+  font-family: "Tangba", sans-serif;
+}
+
+.inven_item_detail > ul > li > ul > li {
+  margin-bottom: 2px;
+}
+
+.chat_container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.chat_content {
+  position: relative;
+  top: 45%;
+  left: 17.5%;
+  width: 57%;
+  height: 41%;
+}
+
+.chat_display {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 0 2px 5px;
+  box-sizing: border-box;
+  margin-bottom: -1px;
+}
+
+.chat_display::-webkit-scrollbar {
+  width: 2px;
+}
+.chat_display::-webkit-scrollbar-thumb {
+  background-color: #444444;
+}
+.chat_display::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.chat_display > p {
+  overflow-wrap: break-word;
+  word-break: keep-all; 
+  margin: 0 0 3px 0;
+  padding: 0;
+  font-family: 'Tangba', sans-serif;
+  font-size: 0.85rem;
+}
+
+.chat_input {
+  width: 95.5%;
+  height: 26%;
+  margin-left: 4.5%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.chat_input > input {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: #fff;
+  font-family: 'Tangba', sans-serif;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.chat_input > input:focus {
+  outline: none;
+}
+
+.chat_text {
+  color: #fff;
+}
+
+.chat_sys {
+  color: #eeebbb;
+}
+
+.speech_bubble {
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  margin: 0;
+  padding: 0;
+}
+
+.speech_bubble > p {
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  color: #fff;
+  font-family: 'Tangba', sans-serif;
+  font-size: 0.8rem;
+}

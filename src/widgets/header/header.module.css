@@ -1,0 +1,41 @@
+.header {
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #111;
+}
+
+.top {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  width: 100%;
+  border-top: 1px solid #111;
+  height: 50px;
+}
+
+.title {
+  color: #aaa;
+  font-weight: 400;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 10px 0;
+  box-sizing: border-box;
+  gap: 5px;
+}
+
+.sign_in {
+  color: #aaa;
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+}
