@@ -13,6 +13,7 @@
 }
 
 .nav {
+  position: fixed;
   width: 100%;
   border-top: 1px solid #111;
   height: 50px;
@@ -20,6 +21,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.541);
 }
 
 .nav > ul {
@@ -75,4 +78,29 @@
   color: #555;
   font-weight: 300;
   padding: 3px 0;
+}
+
+.mobile_nav {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+
+    padding: 5px 20px;
+    box-sizing: border-box;
+  }
+  .top {
+    display: none;
+  }
+  .nav {
+    display: none;
+  }
+  .mobile_nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+  }
 }
