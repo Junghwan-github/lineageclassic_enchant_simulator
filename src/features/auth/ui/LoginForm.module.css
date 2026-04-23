@@ -1,0 +1,43 @@
+.signin_form {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.input {
+  padding: 15px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: #222;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.submit {
+  padding: 15px 10px;
+  width: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #003cff;
+  color: #fff;
+  font-weight: 400;
+}
+.signin_form > p {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
