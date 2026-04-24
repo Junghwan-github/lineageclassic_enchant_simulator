@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/widgets/header";
 import { Footer } from "@/widgets/footer";
 import KakaoAd from "@/shared/ui/kakao-ads/kakao";
+import StoreProvider from "./providers/storeProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://linrush.kr"),
@@ -50,7 +51,7 @@ export const viewport = {
   themeColor: "#000000",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -58,23 +59,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-         <aside className="mobile_ads_top">
-            <KakaoAd adUnit="DAN-EEFpAFQ4UE1SdUXx" width={320} height={50} />
-          </aside>
-        <Header />
-        <div className="content_layout">
-          <aside className="pc_ads_left">
-            <KakaoAd adUnit="DAN-h8JSy4SeIkf4m9Q5" width={160} height={600} />
-          </aside>
-          {children}
-          <aside className="pc_ads_right">
-            <KakaoAd adUnit="DAN-OfgM3JJW4LzZJksG" width={160} height={600} />
-          </aside>
-        </div>
-        <Footer />
-         <aside className="mobile_ads_bottom">
-            <KakaoAd adUnit="DAN-kB6TpJiKn2L1F2pU" width={320} height={50} />
-          </aside>
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );

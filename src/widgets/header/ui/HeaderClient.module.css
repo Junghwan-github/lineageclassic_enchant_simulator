@@ -13,7 +13,6 @@
 }
 
 .nav {
-  position: fixed;
   width: 100%;
   border-top: 1px solid #111;
   height: 50px;
@@ -25,7 +24,7 @@
   background-color: rgba(0, 0, 0, 0.541);
 }
 
-.nav > ul {
+.nav_list {
   width: 850px;
   display: flex;
   flex-direction: row;
