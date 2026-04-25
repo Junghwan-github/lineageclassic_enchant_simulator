@@ -1,0 +1,58 @@
+.wrap {
+    padding: 50px 0;
+    min-height: calc(100vh - 240px);
+}
+.container {
+    border: 1px solid #E3E4E9;
+    background-color: #fff;
+}
+
+.container > h2 {
+    margin: 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.02);
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content > input {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid var(--admin-border-color);
+    font-size: 1rem;
+}
+
+.content > input:focus {
+    outline: none;
+    border-bottom: 1px solid #111;
+}
+
+.content > input::placeholder {
+    color: #999
+}
+
+.editor {
+    min-height: 100%;
+}
+
+.editor :global(.ql-editor) {
+  min-height: 380px;
+}
+
+.content > button {
+    border: none;
+    background-color: var(--cta-color);
+    color: #fff;
+    padding: 15px 0;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 0.9rem;
+}

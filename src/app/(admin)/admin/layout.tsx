@@ -32,7 +32,7 @@ const AdminLayout = async ({ children }: AdminLayoutProps) => {
           <div className={styles.navigation}>
             <SideBar />
           </div>
-          <article className={styles.article}>{children}</article>
+          <div className={styles.content}>{children}</div>
         </main>
       </div>
     </div>
