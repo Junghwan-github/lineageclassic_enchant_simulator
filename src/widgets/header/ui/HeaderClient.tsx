@@ -23,18 +23,18 @@ const HeaderClient = ({ session }: HeaderClientProps) => {
   const router = useRouter();
   const navigationList = [
     // notice
-    { item: "공지", link: "notice" },
+    { item: "공지", link: "/notice" },
     // feedback
-    { item: "개선제안", link: "coming-soon" },
+    { item: "개선제안", link: "/coming-soon" },
     // about
-    { item: "개발자소개", link: "coming-soon" },
+    { item: "개발자소개", link: "/coming-soon" },
     // contact
-    { item: "제작문의", link: "coming-soon" },
+    { item: "제작문의", link: "/coming-soon" },
     // collaboration
-    { item: "협업제안", link: "coming-soon" },
+    { item: "협업제안", link: "/coming-soon" },
     // ads
-    { item: "광고/제휴", link: "coming-soon" },
-    { item: "관리자", link: "admin" },
+    { item: "광고/제휴", link: "/coming-soon" },
+    { item: "관리자", link: "/admin" },
   ];
 
   const handleSignInPageMove = () => {
