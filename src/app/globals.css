@@ -120,3 +120,7 @@ button {
   cursor: pointer;
 }
 
+:root {
+  --admin-border-color: #E3E4E9;
+  --cta-color: #0059ff;
+}

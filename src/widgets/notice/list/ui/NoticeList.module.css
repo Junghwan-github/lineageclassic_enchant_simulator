@@ -1,0 +1,139 @@
+.board_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.board_list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.board_list > li {
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid var(--admin-border-color);
+}
+
+.board {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title > a:hover {
+    border-bottom: 1px solid #111;
+}
+
+.title > span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: #ff1c1c;
+  margin-left: 8px;
+}
+
+.board_meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 30%;
+}
+
+.authors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding: 0 30px;
+  box-sizing: border-box;
+  border-left: 1px solid var(--admin-border-color);
+  border-right: 1px solid var(--admin-border-color);
+}
+
+.create_at {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 5px;
+}
+.view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  width: 50%;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.pagination > button {
+    padding: 5px 7px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+.pagination > button:hover {
+    background-color: #eee;
+}
+
+.board_list.dark > li {
+    border-bottom: 1px solid #222;
+}
+
+.title.dark {
+    width: 70%;
+    color: #fff;
+}
+
+.title.dark > a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.authors.dark {
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    gap: 2px;
+}
+
+.author.dark {
+    color: #fff;
+}
+.create_at.dark {
+    color: #777;
+    font-size: 0.7rem;
+}
+
+.view.dark > svg {
+    color: #fff;
+}
+
+.view.dark > span {
+    color: #fff;
+}
+
+.pagination.dark > button {
+    color: #fff;
+}
+
+.pagination.dark > button:hover {
+    background-color: #222;
+}

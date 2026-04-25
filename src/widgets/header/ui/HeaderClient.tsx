@@ -23,7 +23,7 @@ const HeaderClient = ({ session }: HeaderClientProps) => {
   const router = useRouter();
   const navigationList = [
     // notice
-    { item: "공지", link: "coming-soon" },
+    { item: "공지", link: "notice" },
     // feedback
     { item: "개선제안", link: "coming-soon" },
     // about

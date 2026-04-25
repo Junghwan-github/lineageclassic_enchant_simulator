@@ -1,0 +1,59 @@
+.header {
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+}
+.title {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.authors {
+    display: flex;
+    flex-direction: row;
+    color: #555;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.authors > span {
+    padding: 0 10px;
+}
+
+.authors > span:first-child {
+    padding: 0;
+}
+
+.view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+}
+
+.content {
+    padding: 20px 0;
+    color: #fff;
+    box-sizing: border-box;
+    min-height: 500px;
+    border-bottom: 1px solid #222;
+}
+
+.actions {
+    padding: 15px 0;
+}
+
+.actions > button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: transparent;
+    color: #fff;
+}
