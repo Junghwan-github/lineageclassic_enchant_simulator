@@ -243,6 +243,8 @@ const ARMOR_SCROLL_55_RATES_BY_SAFE: Record<
   },
 };
 
+const EXCLUDE_CURRENT_ENCHANT_IDS = [1, 2, 54, 55];
+
 type ChatMessageType = {
   type: "chat" | "sys";
   message: string;
@@ -361,24 +363,72 @@ const Display = ({
 
   const expandedDisplayData = useMemo(() => {
     return displayData.flatMap((item, itemIdx) =>
-      Array.from({ length: item.count }, (_, countIdx) => ({
-        ...item,
-        renderKey: `${item.id}-${itemIdx}-${countIdx}`,
-      })),
+      Array.from({ length: item.count }, (_, countIdx) => {
+        const isScrollItem = EXCLUDE_CURRENT_ENCHANT_IDS.includes(item.id);
+
+        const detailWithoutCurrentEnchant = (item.detail ?? []).filter(
+          (detail) => !("current_enchant" in detail),
+        );
+
+        return {
+          ...item,
+          detail: isScrollItem
+            ? item.detail
+            : [
+                ...detailWithoutCurrentEnchant,
+                { current_enchant: Number(item.safe_enchant ?? 0) },
+              ],
+          renderKey: `${item.id}-${itemIdx}-${countIdx}`,
+        };
+      }),
     );
   }, [displayData]);
 
-  useEffect(() => {
-    const nextList = [
-      ...expandedDisplayData,
+useEffect(() => {
+  setInvenList((prev) => {
+    const prevItems = prev.filter((item) => item !== null);
+
+    const nextItems = [...prevItems];
+
+    displayData.forEach((item) => {
+      const currentCount = nextItems.filter(
+        (prevItem) => prevItem.id === item.id
+      ).length;
+
+      const addCount = item.count - currentCount;
+
+      if (addCount <= 0) return;
+
+      for (let i = 0; i < addCount; i++) {
+        const isScrollItem = EXCLUDE_CURRENT_ENCHANT_IDS.includes(item.id);
+
+        const detailWithoutCurrentEnchant = (item.detail ?? []).filter(
+          (detail) => !("current_enchant" in detail)
+        );
+
+        nextItems.push({
+          ...item,
+          count: 1,
+          detail: isScrollItem
+            ? item.detail
+            : [
+                ...detailWithoutCurrentEnchant,
+                { current_enchant: Number(item.safe_enchant ?? 0) },
+              ],
+          renderKey: `${item.id}-${crypto.randomUUID()}`,
+        });
+      }
+    });
+
+    return [
+      ...nextItems,
       ...Array.from(
-        { length: Math.max(0, 32 - expandedDisplayData.length) },
-        () => null,
+        { length: Math.max(0, 32 - nextItems.length) },
+        () => null
       ),
     ];
-
-    setInvenList(nextList);
-  }, [expandedDisplayData]);
+  });
+}, [displayData]);
 
   const getDetailObj = (detail?: Array<Record<string, any>>) => {
     if (!detail) return {};
@@ -386,24 +436,12 @@ const Display = ({
   };
 
   const updateCurrentEnchantDetail = (detail?: Array<Record<string, any>>) => {
-    const nextDetail = Array.isArray(detail) ? [...detail] : [];
-    const currentEnchantIndex = nextDetail.findIndex(
-      (d) => d && typeof d === "object" && "current_enchant" in d,
-    );
+    const detailObj = getDetailObj(detail);
+    const currentValue = Number(detailObj.current_enchant ?? 0);
 
-    if (currentEnchantIndex >= 0) {
-      const currentValue = Number(
-        nextDetail[currentEnchantIndex].current_enchant ?? 0,
-      );
-      nextDetail[currentEnchantIndex] = {
-        ...nextDetail[currentEnchantIndex],
-        current_enchant: currentValue + 1,
-      };
-    } else {
-      nextDetail.push({ current_enchant: 1 });
-    }
+    const nextDetail = (detail ?? []).filter((d) => !("current_enchant" in d));
 
-    return nextDetail;
+    return [...nextDetail, { current_enchant: currentValue + 1 }];
   };
 
   const setCurrentEnchantDetail = (
