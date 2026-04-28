@@ -19,11 +19,11 @@ const Footer = () => {
   ];
 
   const footerNav = [
-    { item: "개발자소개", link: "coming-soon" },
-    { item: "제작문의", link: "coming-soon" },
-    { item: "협업제안", link: "coming-soon" },
-    { item: "광고/제휴문의", link: "coming-soon" },
-    { item: "개선제안", link: "coming-soon" },
+    { item: "공지", link: "/notice" },
+    // { item: "제작문의", link: "coming-soon" },
+    // { item: "협업제안", link: "coming-soon" },
+    // { item: "광고/제휴문의", link: "coming-soon" },
+    // { item: "개선제안", link: "coming-soon" },
   ];
 
   return (

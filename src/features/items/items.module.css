@@ -294,3 +294,33 @@
   background-color: transparent;
   border: none;
 }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .list_container {
+     display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 100%;
+  width: 100%;
+  padding: 10px 0;
+  }
+
+  .item_list {
+  z-index: 50;
+}
+
+.reset {
+ width: 50%;
+ justify-content: center;
+}
+.submit {
+  width: 50%;
+}
+
+}

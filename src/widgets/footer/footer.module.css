@@ -108,3 +108,15 @@
 .footer_links_list > li > a {
     color: #999;
 }
+
+@media screen and (max-width: 1024px) {
+
+    .content {
+        width: 100%;
+    }
+
+    .support_info {
+        padding: 0 20px;
+        text-align: center;
+    }
+}

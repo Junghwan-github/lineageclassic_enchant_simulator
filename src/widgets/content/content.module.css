@@ -32,3 +32,16 @@
     box-sizing: border-box;
     font-size: 0.8rem;
 }
+
+@media screen and (max-width: 1024px) {
+    .content {
+        margin-top: 100px;
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+
+    .exclamation {
+        width: 100%;
+    }
+}

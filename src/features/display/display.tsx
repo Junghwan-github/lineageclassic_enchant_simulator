@@ -993,7 +993,7 @@ const Display = ({
   return (
     <div className={styles.display_container}>
       <div className={styles.display_background}>
-        <Image src={background} alt="Background" />
+        <Image className={styles.bg_image} src={background} alt="Background" />
         <div className={styles.speech_bubble}>
           {speechBubble && <p>{speechBubble}</p>}
         </div>

@@ -137,3 +137,27 @@
 .pagination.dark > button:hover {
     background-color: #222;
 }
+
+@media screen and (max-width: 1024px) {
+    .title.dark {
+  width: 50%;
+}
+.board_meta {
+  width: 50%;
+}
+.authors.dark {
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+}
+.author.dark {
+    width: 100%;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+.view.dark {
+    justify-content: center;
+    padding: 0 10px;
+}
+}
