@@ -3,7 +3,7 @@ import styles from "./HeaderClient.module.css";
 import Image from "next/image";
 import logo from "@/assets/images/lc_logo.png";
 import Link from "next/link";
-import { CiMenuFries } from "react-icons/ci";
+import { AiOutlineNotification } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import { logoutAction } from "@/features/auth/model/actions";
 import { UserType } from "@/shared/types/user";
@@ -25,16 +25,16 @@ const HeaderClient = ({ session }: HeaderClientProps) => {
     // notice
     { item: "공지", link: "/notice" },
     // feedback
-    { item: "개선제안", link: "/coming-soon" },
-    // about
-    { item: "개발자소개", link: "/coming-soon" },
-    // contact
-    { item: "제작문의", link: "/coming-soon" },
-    // collaboration
-    { item: "협업제안", link: "/coming-soon" },
-    // ads
-    { item: "광고/제휴", link: "/coming-soon" },
-    { item: "관리자", link: "/admin" },
+    // { item: "개선제안", link: "/coming-soon" },
+    // // about
+    // { item: "개발자소개", link: "/coming-soon" },
+    // // contact
+    // { item: "제작문의", link: "/coming-soon" },
+    // // collaboration
+    // { item: "협업제안", link: "/coming-soon" },
+    // // ads
+    // { item: "광고/제휴", link: "/coming-soon" },
+    // { item: "관리자", link: "/admin" },
   ];
 
   const handleSignInPageMove = () => {
@@ -91,10 +91,12 @@ const HeaderClient = ({ session }: HeaderClientProps) => {
         <h1 className={styles.title}>
           <Link href={"/"}>
             <Image src={logo} alt="Logo" width={70} />
-            인챈트 시뮬레이터
+            강화 시뮬레이터
           </Link>
         </h1>
-        <CiMenuFries size={25} />
+        <Link href={"/notice"}>
+          <AiOutlineNotification size={25} />
+        </Link>
       </nav>
     </header>
   );
